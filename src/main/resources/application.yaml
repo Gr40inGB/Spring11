@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: actuator
+  datasource:
+    username: librarian
+    password: secret
+    url: jdbc:postgresql://localhost:5435/library2
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+management:
+  endpoint:
+    env:
+      show-values: always
+  endpoints:
+    web:
+      exposure:
+        include: env, prometheus, health, info, metric
+
+server:
+  port: 8080

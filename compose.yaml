@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=library2
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_USER=librarian
+    ports:
+      - 5435:5432
